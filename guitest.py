@@ -86,27 +86,32 @@ class Application(Frame):
         
         kline = self.get_kline(self.globalsymbol, self.globalint, self.globalper)
 
-        closelist =list(range(self.globalint))
+        closelist = []
         #localint=self.globalint
         
-        for x in range(1, self.globalint):
+        for x in range(0, self.globalint):
             try:    
                 temp= kline[x][4]
-                closelist[x]=temp
+                closelist.append(float(temp)) #float(temp)
+                #debug
+                #if x== 1:
+                #    print(temp)
+                #end debug
             except IndexError:
                 x= self.globalint
             
-            
-        dfcloselist=pd.DataFrame(closelist)
+        print('%s : %s' % (self.globalsymbol, closelist))
+        #dfcloselist=pd.DataFrame(closelist)
 
-        closearray=np.asarray(dfcloselist, dtype=float)
+        #closearray=np.asarray(closelist, dtype=float)
 
-        close_list=closearray.ravel()
-
-        tempnump=close_list
-        index=[0]
-        fcloselist=np.delete(tempnump, index)
-        self.varcloselist=fcloselist
+        #close_list=closearray.ravel()
+        
+        #tempnump=closelist
+        #index=[0]
+        #fcloselist=np.delete(tempnump, index)
+        #print(fcloselist)
+        self.varcloselist=closelist
         
     def max(self):
         
