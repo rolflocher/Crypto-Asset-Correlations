@@ -9,6 +9,6 @@ When it is done, the full list of correlation coefficients will show up to the l
 To navigate the results, click the Max or Min button to view the highest and lowest correlated pairs.
 To search for a specific pair, enter the second pair under "Search Symbol" and click Search.
 
-This program was originally meant to be run from the command line with python. I launch the program by navigating the directory to the file location with "cd desktop" and then run it with "python guitest.py"
+This program was originally meant to be run from the command line with python, with no arguments.
 
 The Symbols txt needs to be in the same directory. It contains a raw list of all the Binance trading pairs as of 7/14/2018.
